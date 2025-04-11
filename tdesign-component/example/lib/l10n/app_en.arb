@@ -14,6 +14,8 @@
   "other": "Other",
   "refreshing": "Refreshing",
   "releaseRefresh": "ReleaseRefresh",
+  "pullToRefresh": "PullToRefresh",
+  "completeRefresh": "CompleteRefresh",
   "reset": "Reset",
   "days": "days",
   "hours": "hours",
@@ -52,5 +54,7 @@
   "yearLabel": "year",
   "monthLabel": "month",
   "dateLabel": "date",
-  "weeks":"weeks"
+  "weeks":"weeks",
+  "back":"BACK",
+  "top":"TOP"
 }

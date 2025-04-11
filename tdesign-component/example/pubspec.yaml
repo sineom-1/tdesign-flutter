@@ -59,6 +59,9 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+
+dependency_overrides:
+  flutter_plugin_android_lifecycle: 2.0.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -110,14 +113,15 @@ flutter:
     - assets/version
     - assets/img/
     - assets/theme.json
+    - assets/publish_time
 
 # 生成演示代码
 AOPMarket:
-  enable: true
+  enable: false
   compileTarget: frontend_server, dart2js
   versions:
     negativeInfinity~3.0.0:
-      unsupportTips: 请在Flutter 3.+ 运行心悦工程
+      unsupportedTips: 请在Flutter 3.+ 运行心悦工程
     3.0.0~infinity:
       path: ./tdesign_flutter_generator
   saveDartDependencies: true

@@ -17,7 +17,7 @@
 # back_top
 ./bin/api_tool_linux generate --file ../lib/src/components/backtop/td_backtop.dart --name TDBackTop --folder-name back-top --output ../example/assets/api/ --only-api
 # drawer
-./bin/api_tool_linux generate --folder ../lib/src/components/drawer --name TDDrawer,TDDrawerItem,TDDrawerStyle --folder-name drawer --output ../example/assets/api/ --only-api --get-comments
+./bin/api_tool_linux generate --folder ../lib/src/components/drawer --name TDDrawer,TDDrawerWidget,TDDrawerItem,TDDrawerStyle --folder-name drawer --output ../example/assets/api/ --only-api --get-comments
 # indexes
 ./bin/api_tool_linux generate --folder ../lib/src/components/indexes --name TDIndexes,TDIndexesAnchor,TDIndexesList --folder-name indexes --output ../example/assets/api/ --only-api --get-comments
 # navbar
@@ -82,14 +82,20 @@
 # empty
 ./bin/api_tool_linux generate --file ../lib/src/components/empty/td_empty.dart --name TDEmpty --folder-name empty --output ../example/assets/api/ --only-api
 # footer
+./bin/api_tool_linux generate --file ../lib/src/components/footer/td_footer.dart --name TDFooter,TDFooterType --folder-name footer --output ../example/assets/api/ --only-api
+
 # grid
 # image
 ./bin/api_tool_linux generate --file ../lib/src/components/image/td_image.dart --name TDImage --folder-name image --output ../example/assets/api/ --only-api
 # imageViewer
 ./bin/api_tool_linux generate --folder ../lib/src/components/image_viewer  --name TDImageViewer,TDImageViewerWidget,  --folder-name image-viewer --output ../example/assets/api/ --only-api
 # progress
+./bin/api_tool_linux generate --file ../lib/src/components/progress/td_progress.dart --name TDProgress --folder-name progress --output ../example/assets/api/ --only-api
 # result
+./bin/api_tool_linux generate --file ../lib/src/components/result/td_result.dart --name TDResult --folder-name result --output ../example/assets/api/ --only-api
 # skeleton
+./bin/api_tool_linux generate --folder ../lib/src/components/skeleton --name TDSkeleton,TDSkeletonRowColStyle,TDSkeletonRowCol,TDSkeletonRowColObjStyle,TDSkeletonRowColObj --folder-name skeleton --output ../example/assets/api/ --only-api
+
 # sticky
 # swiper
 ./bin/api_tool_linux generate --folder ../lib/src/components/swiper --name TDSwiperPagination,TDPageTransformer --folder-name swiper --output ../example/assets/api/ --only-api --get-comments
@@ -102,6 +108,7 @@
 
 # 反馈
 # action_sheet
+./bin/api_tool_linux generate --folder ../lib/src/components/action_sheet --name TDActionSheetItem,TDActionSheet --folder-name action-sheet --output ../example/assets/api/ --only-api --get-comments
 # dialog
 ./bin/api_tool_linux generate --folder ../lib/src/components/dialog --name TDAlertDialog,TDConfirmDialog,TDDialogButtonOptions,TDDialogButtonStyle,TDDialogScaffold,TDDialogTitle,TDDialogContent,TDDialogInfoWidget,HorizontalNormalButtons,HorizontalTextButtons,TDDialogButton,TDDialogImagePosition,TDImageDialog,TDInputDialog --folder-name dialog --output ../example/assets/api/ --only-api
 # dropdown_menu
@@ -109,9 +116,12 @@
 # loading
 ./bin/api_tool_linux generate --file ../lib/src/components/loading/td_loading.dart --name TDLoading --folder-name loading --output ../example/assets/api/ --only-api
 # message
+./bin/api_tool_linux generate --file ../lib/src/components/message/td_message.dart --name TDMessage,MessageTheme,MessageMarquee,MessageLink --folder-name message --output ../example/assets/api/ --only-api
 # noticeBar
-./bin/api_tool_linux generate --file ../lib/src/components/notice_bar --name TDNoticeBar,TDNoticeBarStyle --folder-name notice-bar --output ../example/assets/api/ --only-api --get-comments
+./bin/api_tool_linux generate --folder ../lib/src/components/notice_bar --name TDNoticeBar,TDNoticeBarStyle --folder-name notice-bar --output ../example/assets/api/ --only-api --get-comments
 # overlay
+# popover
+./bin/api_tool_linux generate --folder ../lib/src/components/popover --name TDPopover,TDPopoverWidget --folder-name popover --output ../example/assets/api/ --only-api --get-comments
 # popup
 ./bin/api_tool_linux generate --folder ../lib/src/components/popup --name TDSlidePopupRoute,TDPopupBottomDisplayPanel,TDPopupBottomConfirmPanel,TDPopupCenterPanel --folder-name popup --output ../example/assets/api/ --only-api --get-comments
 # refresh
@@ -126,7 +136,6 @@
 # theme
 ./bin/api_tool_linux generate --file ../lib/src/theme/td_theme.dart --name TDTheme,TDThemeData --folder-name theme --output ../example/assets/api/ --only-api
 # radius
-
 
 
 

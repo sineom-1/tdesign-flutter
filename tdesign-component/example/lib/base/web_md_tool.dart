@@ -54,7 +54,6 @@ class WebMdTool {
       var path = "";
       if(Platform.environment['FLUTTER_TEST'] == 'true'){
 
-        // file:///Users/zflyluo/WorkSpace/flutter/tdesign_group/tdesign-mobile-flutter/tdesign-component/example/main.dart
         var baseDir = Platform.script.toFilePath().split('/tdesign-component')[0];
         path = '$baseDir/tdesign-site/src/${model.name}/README.md';
         // path = '$baseDir/test/src/${model.name}/README.md';
@@ -251,7 +250,7 @@ import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';''';
     } else if(title == 'PullDownRefresh 下拉刷新'){
       return '''
  
-import 'package:flutter_easyrefresh/easy_refresh.dart';''';
+import 'package:easy_refresh/easy_refresh.dart';''';
 
     }
     return '';

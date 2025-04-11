@@ -33,17 +33,19 @@ class TDDialogScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        width: 311,
-        decoration: BoxDecoration(
-          color: backgroundColor, // 底色
-          borderRadius: BorderRadius.all(Radius.circular(radius)),
-        ),
-        child: Stack(
-          children: [
-            body,
-            showCloseButton ?? false
-                ? Positioned(
+        child: Material(
+          type: MaterialType.transparency,
+          child: Container(
+            width: 311,
+            decoration: BoxDecoration(
+              color: backgroundColor, // 底色
+              borderRadius: BorderRadius.all(Radius.circular(radius)),
+            ),
+            child: Stack(
+              children: [
+                body,
+                showCloseButton ?? false
+                    ? Positioned(
                     top: 0,
                     right: 0,
                     child: GestureDetector(
@@ -62,10 +64,11 @@ class TDDialogScaffold extends StatelessWidget {
                         ),
                       ),
                     ))
-                : Container(height: 0)
-          ],
+                    : Container(height: 0)
+              ],
+            ),
+          ),
         ),
-      ),
     );
   }
 }
@@ -307,7 +310,8 @@ class HorizontalTextButtons extends StatelessWidget {
                 buttonStyle: leftBtn.style,
                 buttonType: leftBtn.type ?? TDButtonType.text,
                 buttonTheme: leftBtn.theme,
-                height: leftBtn.height,
+                // fix： The button height does not fill the container.
+                height: 56,
                 buttonTextFontWeight: leftBtn.fontWeight,
                 onPressed: () {
                   if(leftBtn.action != null){
@@ -327,10 +331,10 @@ class HorizontalTextButtons extends StatelessWidget {
                 buttonText: rightBtn.title,
                 buttonTextColor: rightBtn.titleColor,
                 buttonTextSize: rightBtn.titleSize,
-                buttonStyle: leftBtn.style,
-                buttonType: leftBtn.type ?? TDButtonType.text,
-                buttonTheme: leftBtn.theme ?? TDButtonTheme.primary,
-                height: rightBtn.height,
+                buttonStyle: rightBtn.style,
+                buttonType: rightBtn.type ?? TDButtonType.text,
+                buttonTheme: rightBtn.theme ?? TDButtonTheme.primary,
+                height: 56,
                 buttonTextFontWeight: rightBtn.fontWeight ?? FontWeight.w600,
                 onPressed: () {
                   if(rightBtn.action != null){

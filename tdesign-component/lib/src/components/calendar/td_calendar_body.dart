@@ -23,6 +23,7 @@ class TDCalendarBody extends StatelessWidget {
     required this.cellHeight,
     required this.monthTitleHeight,
     required this.verticalGap,
+    required this.animateTo,
   }) : super(key: key);
 
   final int? maxDate;
@@ -40,6 +41,7 @@ class TDCalendarBody extends StatelessWidget {
   final double monthTitleHeight;
   final double verticalGap;
   final double cellHeight;
+  final bool animateTo;
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +119,9 @@ class TDCalendarBody extends StatelessWidget {
       return;
     }
     final scrollDate = value!.reduce((a, b) => a.isBefore(b) ? a : b);
-    if (months.first.isAfter(scrollDate) || months.last.isBefore(scrollDate)) {
+    var lastMonthDay = DateTime(months.last.year, months.last.month + 1);
+    lastMonthDay = lastMonthDay.add(const Duration(days: -1));
+    if (months.first.isAfter(scrollDate) || lastMonthDay.isBefore(scrollDate)) {
       return;
     }
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -127,9 +131,18 @@ class TDCalendarBody extends StatelessWidget {
         if (item.year == scrollDate.year && item.month == scrollDate.month) {
           break;
         }
-        height += _getMonthHeight(months, i, monthHeight);
+        height += (_getMonthHeight(months, i, monthHeight) ?? 0);
       }
-      if (height > 0) {
+      if (height <= 0) {
+        return;
+      }
+      if (animateTo) {
+        scrollController.animateTo(
+          height,
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+        );
+      } else {
         scrollController.jumpTo(height);
       }
     });
@@ -208,6 +221,9 @@ class TDCalendarBody extends StatelessWidget {
 
   /// 获取月份高度，带缓存
   double _getMonthHeight(List<DateTime> months, int index, Map<int, double> monthHeight) {
+    if (months.getOrNull(index) == null) {
+      return 1;
+    }
     if (monthHeight.containsKey(index)) {
       return monthHeight[index]!;
     }

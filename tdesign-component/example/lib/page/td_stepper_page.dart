@@ -40,7 +40,11 @@ class _TDStepperPageState extends State<TDStepperPage> {
               ExampleItem(desc: '步进器样式', builder: _buildStepperWithTheme),
               ExampleItem(desc: '步进器尺寸', builder: _buildStepperWithSize)
             ]),
-          ]),
+          ],
+      test: [
+        ExampleItem(desc: '自定义stepValue', builder: _customStepperValue),
+      ],
+      ),
     );
   }
 
@@ -111,6 +115,24 @@ class _TDStepperPageState extends State<TDStepperPage> {
                   ))
               .toList(),
         ),
+      ),
+    );
+  }
+
+  var controller = TDStepperController()..value = 1;
+  @Demo(group: 'stepper')
+  Widget _customStepperValue(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.all(8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          TDStepper(theme: TDStepperTheme.filled, controller: controller,),
+          TDButton(text: 'value * 2', onTap: (){
+            controller.value *= 2;
+          },)
+        ],
       ),
     );
   }
